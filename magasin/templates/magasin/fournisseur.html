@@ -1,0 +1,28 @@
+{% extends 'magasin/base.html' %}
+{% load static %}
+{% block body %}
+<form method='POST' class="post-form ">
+	{% csrf_token %}
+	
+	<div class="container " >
+		<div class="row ">
+{% for article in listf %}
+	  <div class="col-sm mt-5">
+<div class="card" style="width: 18rem;">
+
+	<div class="card-body">
+	  <h5 class="card-title az">{{article.nom}} </h5>
+	  <p class="card-text az">{{article.adresse}}</p>
+      <p class="card-text az">{{article.email}}</p>
+      <p class="card-text az">{{article.telephone}}</p>
+	 
+	</div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+
+</div>
+</form>
+{% endblock %}

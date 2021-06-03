@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{%block body%}
+
+ <h1 style="text-align: center; margin-top: 5%;">Add Todo:</h1>
+
+    <form method="post"style="margin-top:5%;">
+        {%csrf_token%}
+        <h5 style="text-align: center;">Title:</h5>
+           <input type="text" name="title" value="{{todo.title}}" class="form-control" style="margin-left: 40%;width: 20%;">
+          <br> <h5 style="text-align: center;"> Description:</h5>
+           <textarea name="descr" class="form-control rounded-0" id style="margin-top:3%;">{{todo.descr}}</textarea>
+           <input type="checkbox" name="cmpte" {% if todo.cmpte == True %} checked {%endif%}>
+            <input type="submit" value="addTodo" class="btn btn-secondary" style="margin-left: 43%;">
+    
+        
+        
+    </form>
+{%endblock%}

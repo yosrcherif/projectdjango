@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <title></title>
+</head>
+<body>
+    <h1 style="text-align: center;">SignUp:</h1>
+    <form method="post" style="margin-top: 5%;">
+        {%csrf_token%}
+        <h5 style="text-align: center;">Nom:</h5>
+        <input type="text" name="name" class="form-control" style="width: 20%; margin-left: 40%;">
+        <h5 style="text-align: center;">Prenom:</h5>
+        <input type="text" name="prenom" class="form-control" style="width: 20%; margin-left: 40%;">
+        <h5 style="text-align: center;">Login</h5>
+        <input type="text" name="username"class="form-control" style="width: 20%; margin-left: 40%;">
+        <h5 style="text-align: center;">password:</h5>
+        <input type="password" name="password"class="form-control" style="width: 20%; margin-left: 40%;"><br>
+        <input type="submit" name="btn" value="Register" class="btn btn-secondary" style="margin-left:47%; margin-top: 1%;"> <br>
+        <a href={% url 'login' %} style="margin-left:47%; margin-top: 1%;">Login</a>
+    </form>
+</body>
+</html>
+

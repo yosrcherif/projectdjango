@@ -1,0 +1,28 @@
+{% extends 'magasin/base.html' %}
+{% block title %} mes commandes {% endblock %}
+
+{% block body %}
+
+<table class="table table-striped table-light">
+ 
+  <thead>
+    <tr>
+      <th scope="col">Duree_garantie</th>
+      <th scope="col">dateCde</th>
+      <th scope="col">totalCde</th>
+    </tr>
+  </thead>
+
+  <tbody>
+ {% for a in list %}
+ 
+    <tr>
+      <td>{{a.Duree_garantie}}</td>
+      <td>{{a.dateCde}}</td>
+      <td>{{a.totalCde}}</td>
+    </tr>
+              
+                    {% endfor %}
+                     </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{%block body%}
+<table style="margin-top: 5%;">
+    {% for todo in user.todolist.all%}
+    <tr>
+        <td>{{todo.id}}</td>
+        <td>{{todo.title}}</td>
+        <td>{{todo.descr}}</td>
+        <td>{%if todo.cmpte == True%}
+            Done
+             {%endif%}
+            {%if todo.cmpte == False%}
+           <a class="btn btn-success" href="{% url 'check' todo.id %}"> not Done</a>
+             {%endif%}
+        </td>
+        <td>{{todo.date}}</td>
+        <td>
+            <a class="btn btn-warning" href="{% url 'edit' todo.id %}">edit</a>
+        </td>
+        <td>
+            <a class="btn btn-danger" href="{% url 'delete' todo.id %}">delete</a>
+
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}

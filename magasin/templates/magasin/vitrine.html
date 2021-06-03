@@ -1,0 +1,26 @@
+{% extends 'magasin/base.html'%}
+{% load static %}
+{% block body %}
+<form method='POST' class="post-form">
+    {% csrf_token %}
+    <div class="container">
+        <div style="overflow:scroll; border:#000000 1px solid;">
+            <table>
+                <tr>
+                    {% for article in list %}
+                   
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{MEDIA_URL}}{{article.img}}" class="card-img-top" alt="..."width="200" height="250">
+                        <div class="card-body">
+                          <h5 class="card-title">{{article.libelle}}</h5>
+                          <p class="card-text">{{article.description}}</p>
+                          <a href="#" class="btn btn-primary">{{prod.prix}} dt.</a>
+                        </div>
+                      </div>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+</form>
+</div>
+{% endblock %}

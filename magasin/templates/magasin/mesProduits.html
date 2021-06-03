@@ -1,0 +1,15 @@
+{% extends 'magasin/base.html' %}
+{% block body %}
+<div>
+    <h2>Add Cars Models</h2>
+</div>
+{% if sauvegarde%}
+<p>Ce contact a bien été enregistré</p>
+{%endif%}
+<form method='POST' class="post-form" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.media}}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-default">Enregistrer</button>
+</form>
+{% endblock %}

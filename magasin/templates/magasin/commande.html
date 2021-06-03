@@ -1,0 +1,15 @@
+{% extends 'magasin/base.html' %}
+{% block body %}
+<div>
+    <h2>Commande</h2>
+</div>
+{% if sauvegarde%}
+<p>Cette commande a bien été enregistrée</p>
+{%endif%}
+<form method='POST' class="post-form" enctype="multipart/form-data">
+    {%csrf_token%}
+    
+    {{form.as_p}}
+    <button type="submit" class="btn btn-default">Commander</button>
+</form>
+{% endblock %}
